@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mentor Booking System</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Department Faculty Profiles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <header>
-      <h1>Automated Mentor Booking System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="faculty.html">Faculty Profiles</a></li>
+                <li><a href="booking.html">Book a Faculty</a></li>
+                <li><a href="developers.html">Developers</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="faculty-section">
-      <h2>Faculty Mentors</h2>
-      <div id="mentor-list"></div>
-    </section>
+    <main>
+        <section class="hero">
+            <h1>CS Department Faculty Profiles</h1>
+            <p>Explore our esteemed faculty members and their areas of expertise</p>
+            <a href="faculty.html" class="cta-button">View Profiles</a>
+        </section>
 
-    <section id="booking-section">
-      <h2>Available Time Slots</h2>
-      <ul id="available-slots">
-        <!-- Time slots will be added dynamically -->
-      </ul>
-    </section>
+        <section class="features">
+            <div class="feature">
+                <h2>Expert Guidance</h2>
+                <p>Learn from experienced professionals in various computer science domains</p>
+            </div>
+            <div class="feature">
+                <h2>Mentorship Opportunities</h2>
+                <p>Connect with faculty mentors for academic and career guidance</p>
+            </div>
+            <div class="feature">
+                <h2>Cutting-edge Research</h2>
+                <p>Engage in groundbreaking research projects led by our faculty</p>
+            </div>
+        </section>
+    </main>
 
-    <section id="communication-section">
-      <h2>Communication</h2>
-      <p id="notification"></p>
-    </section>
+    <footer>
+        <p>&copy; 2024 CS Department Faculty Profiles. All rights reserved.</p>
+    </footer>
 
-    <script src="script.js"></script>
-  </body>
+    <script src="main.js"></script>
+</body>
 </html>
