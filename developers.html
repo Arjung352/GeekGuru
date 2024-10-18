@@ -1,64 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Developers - CS Department Faculty Profiles</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="faculty.html">Faculty Profiles</a></li>
-                <li><a href="booking.html">Book a Faculty</a></li>
-                <li><a href="developers.html" class="active">Developers</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-brand">My Website</div>
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Booking</a>
+              <ul class="dropdown-content">
+                <li><a href="developers.html">Booked</a></li>
+                <li><a href="#">Available</a></li>
+              </ul>
+            </li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section class="developers-section">
-            <h1>Meet the Developers</h1>
-            <div class="developers-container">
-                <div class="developer-card">
-                    <img src="https://via.placeholder.com/150" alt="Ansh Bansal's Photo">
-                    <div class="developer-info">
-                        <h2>Ansh Bansal</h2>
-                        <p>Lead Developer</p>
-                    </div>
-                </div>
-                <div class="developer-card">
-                    <img src="https://via.placeholder.com/150" alt="Arjun Gupta's Photo">
-                    <div class="developer-info">
-                        <h2>Arjun Gupta</h2>
-                        <p>Chutia </p>
-                    </div>
-                </div>
-                <div class="developer-card">
-                    <img src="https://via.placeholder.com/150" alt="Adarsh Sharma's Photo">
-                    <div class="developer-info">
-                        <h2>Adarsh Sharma</h2>
-                        <p>JavaScript Developer</p>
-                    </div>
-                </div>
-                <div class="developer-card">
-                    <img src="https://via.placeholder.com/150" alt="Aakansha Kiroula's Photo">
-                    <div class="developer-info">
-                        <h2>Aakansha Kiroula</h2>
-                        <p>UI/UX Designer</p>
-                    </div>
-                </div>
+      <section class="developers-section">
+        <h1>Meet the Developers</h1>
+        <div class="developers-container">
+          <div class="developer-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Ansh Bansal's Photo"
+            />
+            <div class="developer-info">
+              <h2>Ansh Bansal</h2>
+              <p>Styling Expert</p>
             </div>
-            <p class="project-description">This project was developed as part of our web development course, showcasing our skills in HTML, CSS, and JavaScript.</p>
-        </section>
+          </div>
+          <div class="developer-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Arjun Gupta's Photo"
+            />
+            <div class="developer-info">
+              <h2>Arjun Gupta</h2>
+              <p>Lead Developer</p>
+            </div>
+          </div>
+          <div class="developer-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Adarsh Sharma's Photo"
+            />
+            <div class="developer-info">
+              <h2>Adarsh Sharma</h2>
+              <p>Logic Master</p>
+            </div>
+          </div>
+          <div class="developer-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Aakansha Kiroula's Photo"
+            />
+            <div class="developer-info">
+              <h2>Aakansha Kiroula</h2>
+              <p>UI/UX Designer</p>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">
+          This project was developed as part of our web development course,
+          showcasing our skills in HTML, CSS, and JavaScript.
+        </p>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 CS Department Faculty Profiles. All rights reserved.</p>
+      <p>&copy; 2024 CS Department Faculty Profiles. All rights reserved.</p>
     </footer>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

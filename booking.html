@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book a Faculty Member</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="faculty.html">Faculty Profiles</a></li>
-                <li><a href="booking.html" class="active">Book a Faculty</a></li>
-                <li><a href="developers.html" class="active">Developers</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-brand">My Website</div>
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Booking</a>
+              <ul class="dropdown-content">
+                <li><a href="developers.html">Booked</a></li>
+                <li><a href="#">Available</a></li>
+              </ul>
+            </li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <h1>Book an Appointment</h1>
-        <div class="booking-form">
-            <label for="faculty-select">Select Faculty:</label>
-            <select id="faculty-select">
-                <option value="" disabled selected>Select Faculty Member</option>
-            </select>
+      <h1>Book an Appointment</h1>
+      <div class="booking-form">
+        <label for="faculty-select">Select Faculty:</label>
+        <select id="faculty-select">
+          <option value="" disabled selected>Select Faculty Member</option>
+        </select>
 
-            <label for="date-select">Choose Date:</label>
-            <input type="date" id="date-select">
+        <label for="date-select">Choose Date:</label>
+        <input type="date" id="date-select" />
 
-            <label for="time-select">Choose Time Slot:</label>
-            <select id="time-select">
-                <option value="10:00 AM">10:00 AM</option>
-                <option value="11:00 AM">11:00 AM</option>
-                <option value="12:00 PM">12:00 PM</option>
-                <option value="02:00 PM">02:00 PM</option>
-            </select>
+        <label for="time-select">Choose Time Slot:</label>
+        <select id="time-select">
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="11:00 AM">11:00 AM</option>
+          <option value="12:00 PM">12:00 PM</option>
+          <option value="02:00 PM">02:00 PM</option>
+        </select>
 
-            <button class="cta-button" id="book-now">Book Now</button>
-        </div>
+        <button class="cta-button" id="book-now">Book Now</button>
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 CS Department Faculty Profiles. All rights reserved.</p>
+      <p>&copy; 2024 CS Department Faculty Profiles. All rights reserved.</p>
     </footer>
 
     <script src="faculty-data.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

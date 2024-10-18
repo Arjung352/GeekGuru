@@ -1,50 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CS Department Faculty Profiles</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="faculty.html">Faculty Profiles</a></li>
-                <li><a href="booking.html">Book a Faculty</a></li>
-                <li><a href="developers.html">Developers</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-brand">Geek Appointment</div>
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Booking</a>
+              <ul class="dropdown-content">
+                <li><a href="developers.html">Booked</a></li>
+                <li><a href="#">Available</a></li>
+              </ul>
+            </li>
+            <li><a href="developers.html">About Us</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>CS Department Faculty Profiles</h1>
-            <p>Explore our esteemed faculty members and their areas of expertise</p>
+      <section class="hero">
+        <div class="hero-Text">
+          <h1>Book Your Mentor Now!</h1>
+          <p>
+            Explore our esteemed faculty members and their areas of expertise
+          </p>
+          <div class="button-container">
             <a href="faculty.html" class="cta-button">View Profiles</a>
-        </section>
+            <a href="booking.html" class="cta-button">Book Now</a>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://img.freepik.com/free-vector/appointment-booking-with-calendar_23-2148572225.jpg"
+            alt=""
+            class="hero-image"
+          />
+        </div>
+      </section>
 
-        <section class="features">
-            <div class="feature">
-                <h2>Expert Guidance</h2>
-                <p>Learn from experienced professionals in various computer science domains</p>
-            </div>
-            <div class="feature">
-                <h2>Mentorship Opportunities</h2>
-                <p>Connect with faculty mentors for academic and career guidance</p>
-            </div>
-            <div class="feature">
-                <h2>Cutting-edge Research</h2>
-                <p>Engage in groundbreaking research projects led by our faculty</p>
-            </div>
-        </section>
+      <section class="features">
+        <h1>FAQ</h1>
+        <div class="feature">
+          <button class="accordion">Section 1</button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+
+          <button class="accordion">Section 2</button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+
+          <button class="accordion">Section 3</button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 CS Department Faculty Profiles. All rights reserved.</p>
+      <p>&copy; 2024 Team GeekGuru in PixalWizard. All rights reserved.</p>
     </footer>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
