@@ -57,7 +57,7 @@ a:hover {
 /* Header Styles */
 header {
   background-color: #333;
-  padding: 0.3rem;
+  padding: 0rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 /* Navbar Design */
@@ -132,24 +132,45 @@ header {
   cursor: pointer;
 }
 
+/* For screens smaller than 768px */
 @media (max-width: 768px) {
+  /* Hide the menu by default */
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     background-color: #333;
+    position: absolute; /* Positioning the menu */
+    top: 50px; /* Adjust according to your header height */
+    left: 0;
   }
 
+  /* Menu items alignment */
   .nav-links li {
     text-align: center;
+    border-bottom: 1px solid #444; /* Add border to separate items */
   }
 
+  /* Link padding for better spacing */
   .nav-links li a {
+    display: block;
     padding: 15px;
+    color: white; /* Ensure text is visible on dark background */
+    text-decoration: none;
   }
 
+  /* Show the menu toggle (hamburger icon) */
   .menu-toggle {
     display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+
+  /* When the menu toggle is active (menu open), display the menu */
+  .menu-toggle.active + .nav-links {
+    display: flex; /* Show the menu */
   }
 }
 
