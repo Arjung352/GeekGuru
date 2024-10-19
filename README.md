@@ -5,7 +5,7 @@ GeekAppointment is a web-based application designed to help users schedule and m
 ## Team GeekGuru
 
 We are **Team GeekGuru**, a group of enthusiastic developers participating in the Pixel Wizard Hackathon. Our team members include:
-- [Team Leader & Layout as well as Lead developer] - Arjun Gupta 
+- [Arjun Gupta] -Team Leader & Layout as well as Lead developer 
 - [Ansh Bunsal] - style & data Developer
 - [Aakansha] - UI/UX Designer
 - [Adarsh Sharma] - Logic Builder
