@@ -1,51 +1,25 @@
-function toggleMenu() {
-  const navLinks = document.getElementById("navLinks");
-  navLinks.classList.toggle("show");
-}
-// Accordian Logic
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const facultyContainer = document.getElementById("faculty-container");
-  const facultySelect = document.getElementById("faculty-select");
+  const bookedContainer = document.getElementById("booked-container"); // For booked section
 
-  // Load faculty data
+  // Determine if we are on the faculty booking page
+  const isBookingPage = window.location.href.includes("booking");
+
+  // Load faculty data and display profiles
   if (facultyContainer && facultyData) {
-    displayFacultyProfiles(facultyContainer, facultyData);
-  }
-
-  if (facultySelect && facultyData) {
-    populateFacultySelect(facultySelect, facultyData);
-  }
-
-  const bookNowBtn = document.getElementById("book-now");
-  if (bookNowBtn) {
-    bookNowBtn.addEventListener("click", handleBooking);
+    displayFacultyProfiles(facultyContainer, facultyData, isBookingPage);
   }
 });
 
-// Display faculty profiles dynamically
-function displayFacultyProfiles(container, data) {
+// Function to display faculty profiles, conditionally adding select and button on booking page
+function displayFacultyProfiles(container, data, isBookingPage = false) {
   data.forEach((faculty) => {
-    const card = createFacultyCard(faculty);
+    const card = createFacultyCard(faculty, isBookingPage);
     container.appendChild(card);
   });
 }
 
-function createFacultyCard(faculty) {
+function createFacultyCard(faculty, isBookingPage) {
   const card = document.createElement("div");
   card.className = "faculty-card";
 
@@ -68,10 +42,39 @@ function createFacultyCard(faculty) {
   const email = document.createElement("p");
   email.textContent = `Email: ${faculty.email}`;
 
+  // Append elements to content
   content.appendChild(name);
   content.appendChild(qualification);
   content.appendChild(phone);
   content.appendChild(email);
+
+  // Conditionally add the select element and book button if on booking page
+  if (isBookingPage) {
+    const timeSlotSelect = document.createElement("select");
+    timeSlotSelect.id = `time-select-${faculty.name}`; // Unique ID for time slot select
+
+    const timeSlot = ["9:00-11:00", "12:00-2:00", "3:00-5:00", "6:00-8:00"];
+    timeSlot.forEach((slot) => {
+      const option = document.createElement("option");
+      option.value = slot;
+      option.textContent = slot;
+      timeSlotSelect.appendChild(option);
+    });
+
+    // Add the select element
+    content.appendChild(timeSlotSelect);
+
+    // Create the "Book Now" button
+    const bookBtn = document.createElement("button");
+    bookBtn.textContent = "Book Now";
+    bookBtn.className = "book-btn";
+    bookBtn.addEventListener("click", () =>
+      handleBooking(faculty, bookBtn, timeSlotSelect, card)
+    );
+
+    // Add the book button
+    content.appendChild(bookBtn);
+  }
 
   card.appendChild(img);
   card.appendChild(content);
@@ -79,25 +82,23 @@ function createFacultyCard(faculty) {
   return card;
 }
 
-// Populate faculty select dropdown
-function populateFacultySelect(selectElement, data) {
-  data.forEach((faculty) => {
-    const option = document.createElement("option");
-    option.value = faculty.name;
-    option.textContent = faculty.name;
-    selectElement.appendChild(option);
-  });
-}
+// Handle booking process
+function handleBooking(faculty, button, timeSelect, card) {
+  const selectedTime = timeSelect.value;
 
-// Handle booking
-function handleBooking() {
-  const faculty = document.getElementById("faculty-select").value;
-  const date = document.getElementById("date-select").value;
-  const time = document.getElementById("time-select").value;
+  if (selectedTime) {
+    // Change button text to "Booked"
+    button.textContent = "Booked";
+    button.disabled = true; // Disable the button after booking
 
-  if (faculty && date && time) {
-    alert(`Appointment booked with ${faculty} on ${date} at ${time}`);
+    // Move the faculty card to the booked section
+    const bookedContainer = document.getElementById("booked-container");
+    if (bookedContainer) {
+      bookedContainer.appendChild(card);
+    }
+
+    alert(`Appointment booked with ${faculty.name} at ${selectedTime}`);
   } else {
-    alert("Please select all the fields to book an appointment.");
+    alert("Please select a time slot to book an appointment.");
   }
 }
