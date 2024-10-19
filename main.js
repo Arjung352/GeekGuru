@@ -10,6 +10,20 @@ document.addEventListener("DOMContentLoaded", () => {
     displayFacultyProfiles(facultyContainer, facultyData, isBookingPage);
   }
 });
+function toggleMenu() {
+  const navLinks = document.getElementById("navLinks");
+  const menuToggle = document.querySelector(".menu-toggle");
+
+  // Toggle the 'show' class for nav links
+  navLinks.classList.toggle("show");
+
+  // Change the button text to 'X' when menu is open, otherwise to '≡' (or any other symbol)
+  if (navLinks.classList.contains("show")) {
+    menuToggle.innerHTML = "X"; // Menu is open, change button text to 'X'
+  } else {
+    menuToggle.innerHTML = "&#9776;"; // Menu is closed, change button text to '≡' (Hamburger icon)
+  }
+}
 
 // Function to display faculty profiles, conditionally adding select and button on booking page
 function displayFacultyProfiles(container, data, isBookingPage = false) {

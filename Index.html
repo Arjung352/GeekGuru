@@ -48,33 +48,118 @@
       <section class="features">
         <h1>FAQ</h1>
         <div class="feature">
-          <button class="accordion">Section 1</button>
+          <button class="accordion">What is Geek Appointment ?</button>
           <div class="panel">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Geek Appointment is a web platform designed for students to book
+              appointments with faculty members of the Department of Computer
+              Science & Engineering at Sant Longowal Institute of Engineering &
+              Technology, Longowal. Our goal is to streamline communication
+              between students and faculty, making it easier to seek guidance
+              and support.
             </p>
           </div>
 
-          <button class="accordion">Section 2</button>
+          <button class="accordion">How do I book an appointment?</button>
           <div class="panel">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              To book an appointment, simply visit our website, select the
+              faculty member you wish to meet, choose a suitable time slot from
+              their available schedule, and submit your request. You will
+              receive a confirmation once your appointment is approved.
             </p>
           </div>
 
-          <button class="accordion">Section 3</button>
+          <button class="accordion">
+            Who are the developers of this project?
+          </button>
           <div class="panel">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              The Geek Appointment project has been developed by a dedicated
+              team of students: Ansh Bansal, Arjun Gupta, Adarsh Sharma, and
+              Aakansha. Their combined efforts have brought this innovative
+              solution to life.
+            </p>
+          </div>
+
+          <button class="accordion">
+            Is there a limit to how many appointments I can book?
+          </button>
+          <div class="panel">
+            <p>
+              Currently, students can book up to three appointments per week to
+              ensure everyone has a fair opportunity to connect with faculty. If
+              you require more time, please discuss it directly with the faculty
+              member.
+            </p>
+          </div>
+
+          <button class="accordion">
+            What if I need to cancel my appointment?
+          </button>
+          <div class="panel">
+            <p>
+              If you need to cancel your appointment, please do so at least 24
+              hours in advance. You can easily cancel your appointment through
+              the website, and the faculty member will be notified
+              automatically.
+            </p>
+          </div>
+
+          <button class="accordion">
+            Are the appointments held in person or online?
+          </button>
+          <div class="panel">
+            <p>
+              Appointments can be held either in person at the faculty's office
+              or online via video conferencing, depending on the preference of
+              the faculty member and the student. You can specify your
+              preference when booking.
+            </p>
+          </div>
+
+          <button class="accordion">
+            How can I contact support if I have issues?
+          </button>
+          <div class="panel">
+            <p>
+              If you encounter any issues while using the Geek Appointment
+              platform, you can reach our support team via the contact form on
+              the website or through our official email. We aim to respond to
+              all inquiries promptly.
+            </p>
+          </div>
+
+          <button class="accordion">
+            Is there a mobile version of Geek Appointment?
+          </button>
+          <div class="panel">
+            <p>
+              Yes, Geek Appointment is optimized for mobile devices, allowing
+              you to book appointments conveniently from your smartphone or
+              tablet.
+            </p>
+          </div>
+
+          <button class="accordion">
+            What should I do if my preferred time slot is unavailable?
+          </button>
+          <div class="panel">
+            <p>
+              If your preferred time slot is unavailable, we recommend checking
+              other available slots or contacting the faculty member directly to
+              discuss alternative times.
+            </p>
+          </div>
+
+          <button class="accordion">
+            Is my personal information safe on Geek Appointment?
+          </button>
+          <div class="panel">
+            <p>
+              Absolutely. We prioritize your privacy and security. All personal
+              information is securely stored and only accessible by authorized
+              personnel for appointment-related purposes.
             </p>
           </div>
         </div>
@@ -84,7 +169,25 @@
     <footer>
       <p>&copy; 2024 Team GeekGuru in PixalWizard. All rights reserved.</p>
     </footer>
+    <script>
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("show");
+      }
 
+      const accordions = document.querySelectorAll(".accordion");
+      accordions.forEach((accordion) => {
+        accordion.addEventListener("click", function () {
+          this.classList.toggle("active");
+          const panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      });
+    </script>
     <script src="main.js"></script>
   </body>
 </html>

@@ -65,6 +65,7 @@ header {
   background-color: #333;
   color: white;
   padding: 15px 20px;
+
   font-family: sans-serif;
 }
 
@@ -100,38 +101,6 @@ header {
   background-color: #575757;
 }
 
-/* Dropdown Styles */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #444;
-  min-width: 150px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-content li a {
-  padding: 10px 15px;
-  white-space: nowrap;
-}
-
-.dropdown-content li a:hover {
-  background-color: #575757;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Responsive Styles */
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
 /* For screens smaller than 768px */
 @media (max-width: 768px) {
   /* Hide the menu by default */
@@ -143,12 +112,14 @@ header {
     position: absolute; /* Positioning the menu */
     top: 50px; /* Adjust according to your header height */
     left: 0;
+    z-index: 1000; /* Ensure it sits on top of other elements */
   }
 
   /* Menu items alignment */
   .nav-links li {
     text-align: center;
     border-bottom: 1px solid #444; /* Add border to separate items */
+    width: 100%; /* Ensure full width */
   }
 
   /* Link padding for better spacing */
@@ -157,25 +128,32 @@ header {
     padding: 15px;
     color: white; /* Ensure text is visible on dark background */
     text-decoration: none;
+    width: 100%; /* Ensure full-width clickable area */
   }
 
   /* Show the menu toggle (hamburger icon) */
   .menu-toggle {
     display: block;
     cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 20px;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    background-color: #333;
+    color: white;
+    z-index: 1001; /* Ensure it sits above the nav */
   }
 
   /* When the menu toggle is active (menu open), display the menu */
   .menu-toggle.active + .nav-links {
     display: flex; /* Show the menu */
   }
-}
 
-.show {
-  display: flex !important;
+  /* Show class will display the nav */
+  .show {
+    display: flex !important;
+  }
 }
 /* Hero Section Styles */
 .hero {
@@ -374,6 +352,9 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: rgba(235, 235, 235, 0.06);
 }
+.develop-container {
+  overflow-y: hidden;
+}
 /* Footer Styles */
 footer {
   background-color: #333;
@@ -405,6 +386,36 @@ footer p {
 
   .faculty-grid {
     grid-template-columns: 1fr;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    gap: 10px;
+  }
+  .navbar-container {
+    display: flex;
+    align-items: center;
+  }
+  .hero {
+    flex-direction: column-reverse;
+  }
+  .hero-image {
+    height: 200px;
+    width: 200px;
+  }
+  .cta-button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .develop-container {
+    overflow-y: scroll;
   }
 }
 
